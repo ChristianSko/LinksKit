@@ -36,7 +36,7 @@ public enum SocialPlatform: Hashable {
 
    func url(handle: String) -> URL {
       switch self {
-      case .bluesky: URL(string: "https://app.bsky.cz/profile/\(handle)")!
+      case .bluesky: URL(string: "https://bsky.app/profile/\(handle)")!
       case .facebook: URL(string: "https://facebook.com/\(handle)")!
       case .github: URL(string: "https://github.com/\(handle)")!
       case .instagram: URL(string: "https://instagram.com/\(handle)")!
