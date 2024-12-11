@@ -4,6 +4,7 @@ import Foundation
 ///
 /// Use this enum to specify social media platforms when configuring social links in LinksKit.
 public enum SocialPlatform: Hashable {
+   case bluesky
    case facebook
    case github
    case instagram
@@ -15,10 +16,10 @@ public enum SocialPlatform: Hashable {
    case tiktok
    case twitter
    case youtube
-   case bluesky
 
    var systemImage: String {
       switch self {
+      case .bluesky: "b.circle.fill"
       case .facebook: "hand.thumbsup"
       case .github: "cat.circle.fill"
       case .instagram: "camera.circle"
@@ -30,12 +31,12 @@ public enum SocialPlatform: Hashable {
       case .tiktok: "music.note"
       case .twitter: "bird"
       case .youtube: "play.rectangle.fill"
-      case .bluesky: "b.circle.fill"
       }
    }
 
    func url(handle: String) -> URL {
       switch self {
+      case .bluesky: URL(string: "https://app.bsky.cz/profile/\(handle)")!
       case .facebook: URL(string: "https://facebook.com/\(handle)")!
       case .github: URL(string: "https://github.com/\(handle)")!
       case .instagram: URL(string: "https://instagram.com/\(handle)")!
@@ -47,7 +48,6 @@ public enum SocialPlatform: Hashable {
       case .tiktok: URL(string: "https://www.tiktok.com/@\(handle)")!
       case .twitter: URL(string: "https://twitter.com/\(handle)")!
       case .youtube: URL(string: "https://www.youtube.com/\(handle)")!
-      case .bluesky: URL(string: "https://app.bsky.cz/profile/\(handle)")!
       }
    }
 }
@@ -63,6 +63,7 @@ extension SocialPlatform: CustomStringConvertible {
    /// ```
    public var description: String {
       switch self {
+      case .bluesky: "Bluesky"
       case .facebook: "Facebook"
       case .github: "GitHub"
       case .instagram: "Instagram"
@@ -74,7 +75,6 @@ extension SocialPlatform: CustomStringConvertible {
       case .tiktok: "TikTok"
       case .twitter: "X/Twitter"
       case .youtube: "YouTube"
-      case .bluesky: "Bluesky"
       }
    }
 }
