@@ -15,6 +15,7 @@ public enum SocialPlatform: Hashable {
    case tiktok
    case twitter
    case youtube
+   case bluesky
 
    var systemImage: String {
       switch self {
@@ -29,6 +30,7 @@ public enum SocialPlatform: Hashable {
       case .tiktok: "music.note"
       case .twitter: "bird"
       case .youtube: "play.rectangle.fill"
+      case .bluesky: "b.circle.fill"
       }
    }
 
@@ -45,6 +47,7 @@ public enum SocialPlatform: Hashable {
       case .tiktok: URL(string: "https://www.tiktok.com/@\(handle)")!
       case .twitter: URL(string: "https://twitter.com/\(handle)")!
       case .youtube: URL(string: "https://www.youtube.com/\(handle)")!
+      case .bluesky: URL(string: "https://app.bsky.cz/profile/\(handle)")!
       }
    }
 }
@@ -71,6 +74,7 @@ extension SocialPlatform: CustomStringConvertible {
       case .tiktok: "TikTok"
       case .twitter: "X/Twitter"
       case .youtube: "YouTube"
+      case .bluesky: "Bluesky"
       }
    }
 }
